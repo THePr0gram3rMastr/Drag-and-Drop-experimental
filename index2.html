@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Slider Stop</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+        <script>
+               function onBodyLoad() {
+                 document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        function onDeviceReady() {
+            // set your swipe threshold explicitly
+            $.event.special.swipe.horizontalDistance
+            $(document).on("swiperight", "#listitem", function() {
+                $.mobile.changePage("#page1");
+            });
+        </script>
+    </head> 
+    <body>
+        <div data-role="page" id="home">
+            <div data-role="content">
+                <p>
+                    <ul data-role="listview" data-inset="true" data-theme="c">
+                        <li id="listitem">Swipe Right to view Page 1</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div data-role="page" id="page1">
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" data-theme="c">
+                    <li data-role="list-divider">Navigation</li>
+                    <li><a href="#home">Back to the Home Page</a></li>
+                </ul>
+                <p>
+                    Yeah!<br />You Swiped Right to view Page 1
+                </p>
