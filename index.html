@@ -6,36 +6,10 @@
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src=""></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
   <style>
-   $( init );
-
- function init() {
-  document.addEventListener("touchstart", touchHandler, true);
-  document.addEventListener("touchmove", touchHandler, true);
-  document.addEventListener("touchend", touchHandler, true);
-  document.addEventListener("touchcancel", touchHandler, true);   
-  }
-  function touchHandler(event)
-  {
-  var touches = event.changedTouches,
-  first = touches[0],
-  type = "";
-  switch(event.type)
-  {
-  case "touchstart": type = "mousedown"; break;
-  case "touchmove":  type="mousemove"; break;        
-  case "touchend":   type="mouseup"; break;
-  default: return;
-  }
-  var simulatedEvent = document.createEvent("MouseEvent");
-   simulatedEvent.initMouseEvent(type, true, true, window, 1,
-                      first.screenX, first.screenY,
-                      first.clientX, first.clientY, false,
-                      false, false, false, 0/*left*/, null);
-  first.target.dispatchEvent(simulatedEvent); 
-  event.preventDefault();
-   }
+  
   </script>
 </head>
 <body>
